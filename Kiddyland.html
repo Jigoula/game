@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KiddyLand Harajuku | Emoji Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <style>
+        :root {
+            --kiddy-red: #ff4757;
+            --kiddy-blue: #54a0ff;
+            --kiddy-yellow: #feca57;
+            --kiddy-pink: #ff9ff3;
+            --dark: #2f3542;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background-color: #ffffff;
+            color: var(--dark);
+            scroll-behavior: smooth;
+        }
+
+        /* --- Nav --- */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(5px);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 3px solid var(--kiddy-yellow);
+        }
+
+        .logo { font-family: 'Bubblegum Sans'; font-size: 2rem; color: var(--kiddy-red); text-decoration: none; }
+
+        /* --- Hero --- */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(135deg, var(--kiddy-pink), var(--kiddy-blue));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-emoji { font-size: 8rem; margin-bottom: 20px; animation: floating 3s ease-in-out infinite; }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* --- Dépliant Présentation --- */
+        .presentation {
+            padding: 100px 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            align-items: center;
+        }
+
+        .emoji-box {
+            background: #f1f2f6;
+            border-radius: 50px;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10rem;
+            border: 10px dashed var(--kiddy-pink);
+        }
+
+        /* --- Floor Guide (Grid d'Emojis) --- */
+        .floors { padding: 80px 5%; background: #fafafa; text-align: center; }
+        .floor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .floor-card {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .floor-card:hover { transform: scale(1.05); background: var(--kiddy-yellow); }
+        .floor-card .icon { font-size: 4rem; margin-bottom: 15px; display: block; }
+
+        /* --- Boutique --- */
+        .shop { padding: 100px 5%; }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            border: 3px solid #f1f2f6;
+            border-radius: 25px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .product-emoji {
+            font-size: 5rem;
+            background: #f8f9fa;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .btn-buy {
+            background: var(--kiddy-red);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        footer { background: var(--dark); color: white; padding: 50px; text-align: center; }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">🧸 KIDDY LAND</a>
+        <div style="font-size: 1.5rem;">🛒 <span id="count">0</span></div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-emoji">🏯✨</div>
+        <h1 style="font-family: 'Bubblegum Sans'; font-size: 4rem; margin: 0;">BIENVENUE À HARAJUKU</h1>
+        <p style="font-size: 1.5rem;">Le temple du Kawaii s'invite dans votre navigateur !</p>
+    </section>
+
+    <section class="presentation">
+        <div class="emoji-box animate__animated animate__fadeInLeft">
+            🏬🎈
+        </div>
+        <div>
+            <h2 style="font-family: 'Bubblegum Sans'; font-size: 3rem; color: var(--kiddy-red);">L'Histoire KiddyLand</h2>
+            <p>Depuis 1950, nous transformons le shopping en une fête foraine géante. KiddyLand, c'est l'âme de Tokyo distillée dans 5 étages de pur bonheur.</p>
+            <p><strong>Nos valeurs :</strong> 🌈 Créativité, 💖 Partage, 🍭 Douceur.</p>
+        </div>
+    </section>
+
+    <section class="floors">
+        <h2 style="font-family: 'Bubblegum Sans'; font-size: 3rem;">Le Guide des Étages</h2>
+        <div class="floor-grid">
+            <div class="floor-card">
+                <span class="icon">🐶</span>
+                <h3>4F - Snoopy Town</h3>
+                <p>Le monde de Peanuts & Friends.</p>
+            </div>
+            <div class="floor-card">
+                <span class="icon">🎀</span>
+                <h3>3F - Hello Kitty Shop</h3>
+                <p>Le temple de l'icône mondiale.</p>
+            </div>
+            <div class="floor-card">
+                <span class="icon">⚔️</span>
+                <h3>2F - Star Wars Galaxy</h3>
+                <p>Pour les petits et grands Jedis.</p>
+            </div>
+            <div class="floor-card">
+                <span class="icon">🐰</span>
+                <h3>1F - Miffy Style</h3>
+                <p>Douceur et design minimaliste.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="shop">
+        <h2 style="text-align: center; font-family: 'Bubblegum Sans'; font-size: 3rem; margin-bottom: 50px;">Boutique Exclusive 🎁</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <span class="product-emoji">🧸</span>
+                <h3>Ours de Collection</h3>
+                <p>Série limitée Tokyo 2026</p>
+                <p style="font-weight: bold; color: var(--kiddy-blue);">25.00 €</p>
+                <button class="btn-buy" onclick="add()">Ajouter ✨</button>
+            </div>
+            <div class="product-card">
+                <span class="product-emoji">🚀</span>
+                <h3>Fusée Retro</h3>
+                <p>Jouet en bois durable</p>
+                <p style="font-weight: bold; color: var(--kiddy-blue);">18.50 €</p>
+                <button class="btn-buy" onclick="add()">Ajouter ✨</button>
+            </div>
+            <div class="product-card">
+                <span class="product-emoji">🎨</span>
+                <h3>Kit Artiste Kawaii</h3>
+                <p>12 stylos magiques</p>
+                <p style="font-weight: bold; color: var(--kiddy-blue);">12.00 €</p>
+                <button class="btn-buy" onclick="add()">Ajouter ✨</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Fait avec ❤️ pour les fans de KiddyLand</p>
+        <p style="font-size: 2rem;">🇯🇵 🌈 🧸 🍭 🚀</p>
+    </footer>
+
+    <script>
+        let c = 0;
+        function add() {
+            c++;
+            document.getElementById('count').innerText = c;
+            alert("Article ajouté avec succès ! 🌈");
+        }
+    </script>
+
+</body>
+</html>
