@@ -117,17 +117,11 @@
 
         footer { background: var(--dark); color: white; padding: 50px; text-align: center; }
 
-        /* Contact Form */
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .contact-form input, .contact-form textarea {
-            margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid var(--dark);
-            border-radius: 5px;
+        .contact-info {
+            background: #f1f2f6;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
         }
         
     </style>
@@ -211,12 +205,13 @@
 
     <section class="contact">
         <h2 style="font-family: 'Bubblegum Sans'; font-size: 3rem;">Contactez-nous 📞</h2>
-        <form class="contact-form" onsubmit="submitForm(event)">
-            <input type="text" id="name" placeholder="Votre nom" required>
-            <input type="email" id="email" placeholder="Votre email" required>
-            <textarea id="message" rows="4" placeholder="Votre message" required></textarea>
-            <button type="submit">Envoyer</button>
-        </form>
+        <div class="contact-info">
+            <p><strong>Adresse :</strong> 6-1-9 Jingumae, Shibuya-ku, Tokyo</p>
+            <p><strong>Code Postal :</strong> 〒150-0001</p>
+            <p><strong>Téléphone :</strong> 03-3409-3431</p>
+            <p><strong>Fax :</strong> 03-3409-3438</p>
+            <p><strong>Horaires d'ouverture :</strong> En raison des mesures COVID-19, ouverts de 11 h à 20 h.</p>
+        </div>
     </section>
 
     <footer>
@@ -233,16 +228,6 @@
             cart.push(product);
             document.getElementById('count').innerText = c;
             alert(product + " ajouté avec succès ! 🌈");
-        }
-
-        function submitForm(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            alert(`Merci ${name}! Votre message a été envoyé.`);
-            document.querySelector('.contact-form').reset();
         }
     </script>
 
